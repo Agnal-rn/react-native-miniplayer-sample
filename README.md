@@ -40,7 +40,13 @@ yarn add @agnal/react-native-miniplayer
 ## Features
 
 ### Play video in normal mode
-![Landscape video Normal Mode](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/normal-mode_rK4T95kt.webm)
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/2.gif)
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/3.gif)
+### Play video in full-screem mode
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/5.gif)
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/1.gif)
+### Play video in mini mode
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/4.gif)
 
 ## Usage
 
