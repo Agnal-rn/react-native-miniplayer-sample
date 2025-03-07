@@ -39,6 +39,14 @@ yarn add @agnal/react-native-miniplayer
 
 ## Features
 
+### Play video in normal mode
+
+<video width="320" height="240" controls>
+  <source src="https://github.com/Agnal-rn/react-native-miniplayer-sample/raw/main/normal%20mode.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 ## Usage
 
 Please clone this sample project and run it to test the playground
