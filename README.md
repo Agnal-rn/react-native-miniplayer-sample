@@ -100,10 +100,10 @@ Object's attributes
 | -------------- | ------------------------------------------------------------------------------------------------------------------------ | ------ |
 | `id`           | string (required) - Unique identifier for the video                                                                      |        |
 | `uri`          | string (required) - Video streaming URI or local URI                                                                     |        |
-| `thumbnailUri` | string or undefined - Image URI or local URI displayed while loading the video                                           |        |
-| `title`        | string or undefined - Video title displayed in mini mode                                                                 |        |
-| `subtitle`     | string or undefined - Video subtitle displayed in mini mode                                                              |        |
-| `extraData`    | any - Additional data in case you want to dynamically render `RenderHeader`/`RenderContent`. See the sample for details. |        |
+| `thumbnailUri` | string (optional) - Image URI or local URI displayed while loading the video                                           |        |
+| `title`        | string (optional) - Video title displayed in mini mode                                                                 |        |
+| `subtitle`     | string (optional) - Video subtitle displayed in mini mode                                                              |        |
+| `extraData`    | any (optional) - Additional data in case you want to dynamically render `RenderHeader`/`RenderContent`. See the sample for details. |        |
 
 ### VideoEvent
 
@@ -205,7 +205,7 @@ Attributes to set
 | `Theme?`            | 'light'                                                                      | 'dark'        |
 
 ##### Action Options
-
+Can custom icon
 If the `icon` is `undefined`, the icon will not be displayed but the button can still be pressed to perform the action.
 If actions like `expand`, `seekForward`, etc., are `undefined`, those actions will be hidden.
 
