@@ -15,61 +15,70 @@ VideoConfig.set({
 });
 
 const VideoPage = () => {
-  const renderContent = (_?: VideoData) => (
-    <ScrollView>
-      <View style={styles.contentContainer}>
-        <Text style={styles.videoTitle}>This is your custom content</Text>
-        <Text style={styles.channelName}>React Native Masters</Text>
+  const renderContent = (data: VideoData) => {
+    if (!data) return <></>;
 
-        <View style={styles.statsRow}>
-          <Text style={styles.statsText}>1.2M views • 3 days ago</Text>
-          <View style={styles.likeContainer}>
-            <Text style={styles.statsText}>👍 42K</Text>
-            <Text style={styles.statsText}>👎 1K</Text>
+    const {extraData} = data;
+    const {commentCount, likeCount, dislikeCount, viewCount} = extraData;
+    return (
+      <ScrollView>
+        <View style={styles.contentContainer}>
+          <Text style={styles.videoTitle}>This is your custom content</Text>
+          <Text style={styles.channelName}>React Native Masters</Text>
+
+          <View style={styles.statsRow}>
+            <Text style={styles.statsText}>
+              {viewCount}M views • 3 days ago
+            </Text>
+            <View style={styles.likeContainer}>
+              <Text style={styles.statsText}>👍 {likeCount}K</Text>
+              <Text style={styles.statsText}>👎 {dislikeCount}K</Text>
+            </View>
           </View>
-        </View>
 
-        <View style={styles.divider} />
+          <View style={styles.divider} />
 
-        <Text style={styles.description}>
-          Learn how to create a custom video player in React Native with
-          advanced features like picture-in-picture, custom controls, and more.
-          Perfect for beginners and intermediate developers.
-        </Text>
-
-        <View style={styles.actionsContainer}>
-          <View style={styles.actionButton}>
-            <Text style={styles.actionIcon}>📤</Text>
-            <Text style={styles.actionText}>Share</Text>
-          </View>
-          <View style={styles.actionButton}>
-            <Text style={styles.actionIcon}>💾</Text>
-            <Text style={styles.actionText}>Save</Text>
-          </View>
-          <View style={styles.actionButton}>
-            <Text style={styles.actionIcon}>⭐</Text>
-            <Text style={styles.actionText}>Rate</Text>
-          </View>
-        </View>
-
-        <View style={styles.divider} />
-
-        <Text style={styles.sectionTitle}>Comments (253)</Text>
-        <View style={styles.comment}>
-          <Text style={styles.commentAuthor}>John Doe</Text>
-          <Text style={styles.commentText}>
-            This video helped me solve my issue with video controls. Thank you!
+          <Text style={styles.description}>
+            Learn how to create a custom video player in React Native with
+            advanced features like picture-in-picture, custom controls, and
+            more. Perfect for beginners and intermediate developers.
           </Text>
+
+          <View style={styles.actionsContainer}>
+            <View style={styles.actionButton}>
+              <Text style={styles.actionIcon}>📤</Text>
+              <Text style={styles.actionText}>Share</Text>
+            </View>
+            <View style={styles.actionButton}>
+              <Text style={styles.actionIcon}>💾</Text>
+              <Text style={styles.actionText}>Save</Text>
+            </View>
+            <View style={styles.actionButton}>
+              <Text style={styles.actionIcon}>⭐</Text>
+              <Text style={styles.actionText}>Rate</Text>
+            </View>
+          </View>
+
+          <View style={styles.divider} />
+
+          <Text style={styles.sectionTitle}>Comments ({commentCount})</Text>
+          <View style={styles.comment}>
+            <Text style={styles.commentAuthor}>John Doe</Text>
+            <Text style={styles.commentText}>
+              This video helped me solve my issue with video controls. Thank
+              you!
+            </Text>
+          </View>
+          <View style={styles.comment}>
+            <Text style={styles.commentAuthor}>Jane Smith</Text>
+            <Text style={styles.commentText}>
+              Great tutorial! Could you make one about audio players next?
+            </Text>
+          </View>
         </View>
-        <View style={styles.comment}>
-          <Text style={styles.commentAuthor}>Jane Smith</Text>
-          <Text style={styles.commentText}>
-            Great tutorial! Could you make one about audio players next?
-          </Text>
-        </View>
-      </View>
-    </ScrollView>
-  );
+      </ScrollView>
+    );
+  };
 
   const renderInteraction = (_?: VideoData) => {
     return <></>;

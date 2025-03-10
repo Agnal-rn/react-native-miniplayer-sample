@@ -39,6 +39,20 @@ yarn add @agnal/react-native-miniplayer
 
 ## Features
 
+### Play video in normal mode
+
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/2.gif)
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/3.gif)
+
+### Play video in full-screem mode
+
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/5.gif)
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/1.gif)
+
+### Play video in mini mode
+
+![Video](https://github.com/Agnal-rn/react-native-miniplayer-sample/blob/main/4.gif)
+
 ## Usage
 
 Please clone this sample project and run it to test the playground
@@ -87,14 +101,14 @@ Component's properties:
 
 Object's attributes
 
-| Attribute      | Description                                                                                                              | Sample |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------ | ------ |
-| `id`           | string (required) - Unique identifier for the video                                                                      |        |
-| `uri`          | string (required) - Video streaming URI or local URI                                                                     |        |
-| `thumbnailUri` | string or undefined - Image URI or local URI displayed while loading the video                                           |        |
-| `title`        | string or undefined - Video title displayed in mini mode                                                                 |        |
-| `subtitle`     | string or undefined - Video subtitle displayed in mini mode                                                              |        |
-| `extraData`    | any - Additional data in case you want to dynamically render `RenderHeader`/`RenderContent`. See the sample for details. |        |
+| Attribute      | Description                                                                                                                         | Sample |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| `id`           | string (required) - Unique identifier for the video                                                                                 |        |
+| `uri`          | string (required) - Video streaming URI or local URI                                                                                |        |
+| `thumbnailUri` | string (optional) - Image URI or local URI displayed while loading the video                                                        |        |
+| `title`        | string (optional) - Video title displayed in mini mode                                                                              |        |
+| `subtitle`     | string (optional) - Video subtitle displayed in mini mode                                                                           |        |
+| `extraData`    | any (optional) - Additional data in case you want to dynamically render `RenderHeader`/`RenderContent`. See the sample for details. |        |
 
 ### VideoEvent
 
@@ -139,7 +153,6 @@ const progressEventId = VideoEvent.addEventListener(
     // Your code
   },
 );
-VideoEvent.removeEventListener(progressId);
 
 const unmountVideoId = VideoEvent.addEventListener('unmountVideo', () => {
   // Your code
@@ -197,6 +210,7 @@ Attributes to set
 
 ##### Action Options
 
+Can custom icon
 If the `icon` is `undefined`, the icon will not be displayed but the button can still be pressed to perform the action.
 If actions like `expand`, `seekForward`, etc., are `undefined`, those actions will be hidden.
 

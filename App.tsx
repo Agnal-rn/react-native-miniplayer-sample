@@ -77,6 +77,15 @@ function App(): JSX.Element {
     <GestureHandlerRootView style={{flex: 1}}>
       <SafeAreaView ref={viewRef} style={{flex: 1}}>
         <StatusBar barStyle={'light-content'} />
+        <Text
+          style={{
+            fontSize: 24,
+            paddingVertical: 12,
+            fontWeight: '600',
+            textAlign: 'center',
+          }}>
+          This is the sample
+        </Text>
         <FlatList
           data={list}
           onScroll={({nativeEvent: {contentOffset}}) => {
